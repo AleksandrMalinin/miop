@@ -1,0 +1,201 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem;
+  min-height: 100vh;
+  background: var(--secondary-glow);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header a {
+  font-family: var(--font-mono);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 6rem;
+  max-width: 1600px;
+}
+
+.screen:first-of-type {
+  justify-content: initial;
+  padding: 6rem 0;
+}
+
+.screen p {
+  font-size: 2.2rem;
+  font-family: var(--font-rubik);
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: auto;
+}
+
+.listen {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: var(--third-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.album {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+.album-info p {
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+}
+
+.album-title {
+  display: flex;
+  font-family: var(--font-rubik);
+  font-size: 2.2rem;
+}
+
+.album-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-duration {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+p.album-description {
+  padding-left: 40px;
+  font-size: 1rem;
+  background: var(--third-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.credits p {
+  font-size: 0.8rem;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .hoverImage:hover {
+    content: url('/images/mold_2.png');
+  }
+
+  .header a:hover,
+  .credits a:hover {
+    opacity: 0.2;
+  }
+
+  .socials a:hover {
+    background: var(--primary-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .main {
+    padding: 0 5vh;
+  }
+
+  .screen:first-of-type {
+    padding: 40px 0 6rem;
+    height: auto;
+  }
+}
+
+/* Mobile and small desktop */
+@media (max-width: 1120px) {
+  .screen:first-of-type {
+    height: auto;
+  }
+
+  .album {
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 10vw;
+  }
+
+  .socials {
+    justify-content: center;
+    margin-top: 17vw;
+  }
+
+  .album-title-wrap {
+    padding-top: 4vw;
+  }
+
+  p.album-description {
+    font-size: 14px;
+    width: 100%;
+    padding: 50px 0;
+    padding-left: 5vw;
+  }
+
+  .album img {
+    width: 100%;
+    height: auto;
+  }
+
+  .album-info {
+    margin-left: 0;
+  }
+}
+
+/* Tablet and normal desktop */
+@media (min-width: 701px) and (max-width: 1440px) {
+  .title {
+    height: 100%;
+  }
+
+  .title h1 {
+    width: 100%;
+    text-align: center;
+    margin: -10vw 0 0;
+    font-size: 28vw;
+  }
+
+  .releases,
+  p.about {
+    width: 100%;
+  }
+
+  .releases {
+    max-width: 900px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .screen p {
+    width: 800px;
+  }
+}

@@ -1,0 +1,256 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem;
+  min-height: 100vh;
+  background: var(--secondary-glow);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header a {
+  font-family: var(--font-mono);
+}
+
+.title {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  font-family: var(--font-rubik);
+}
+
+.title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title h1 {
+  position: relative;
+  margin: 5rem 0 0;
+  font-weight: normal;
+  font-size: 25.85rem;
+  line-height: 1;
+  background: var(--third-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1.animated-text {
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 10s ease infinite;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1600px;
+  height: 100vh;
+}
+
+.screen:first-of-type {
+  justify-content: initial;
+  padding: 6rem 0;
+}
+
+.screen:last-of-type {
+  padding-bottom: 6rem;
+}
+
+.screen p {
+  font-size: 2.2rem;
+  width: 800px;
+  font-family: var(--font-rubik);
+}
+
+.releases {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.releases-active {
+  background: var(--third-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.releases a {
+  width: 100%;
+  margin-bottom: 5rem;
+  font-size: 4.2rem;
+  font-family: var(--font-mono);
+}
+
+.releases span {
+  vertical-align: bottom;
+  font-size: 1.2rem;
+}
+
+.releases a:nth-child(2) {
+  margin-bottom: 8rem;
+  text-align: right;
+}
+
+.releases a:last-child {
+  text-align: center;
+}
+
+p.about {
+  margin: auto 0;
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  background: var(--primary-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: auto;
+}
+
+.socials a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+}
+
+.listen {
+  font-weight: bold;
+  background: var(--third-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .hoverImage:hover {
+    content: url('/images/mold_2.png');
+  }
+
+  .header a:hover,
+  .socials a:hover,
+  .releases a:not(.releases-active):hover {
+    opacity: 0.2;
+  }
+
+  .releases-active:hover {
+    background: var(--primary-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .main {
+    padding: 0 5vh;
+  }
+
+  .screen:first-of-type {
+    padding: 40px 0;
+  }
+
+  .title {
+    width: auto;
+    height: 100%;
+  }
+
+  .title h1 {
+    width: 100%;
+    margin: 0;
+    font-weight: normal;
+    font-size: 30vw;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .releases {
+    width: 100%;
+  }
+
+  .releases a {
+    font-size: 12vw;
+  }
+
+  .releases span {
+    font-size: 4vw;
+  }
+
+  .screen p {
+    font-size: 4vw;
+    width: 100%;
+  }
+
+  .socials {
+    margin-top: 17vw;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .socials a {
+    font-size: 7vw;
+  }
+
+  .listen {
+    margin-bottom: 5vw;
+  }
+}
+
+/* Tablet and normal desktop */
+@media (min-width: 701px) and (max-width: 1440px) {
+  .title {
+    height: 100%;
+  }
+
+  .title h1 {
+    width: 100%;
+    text-align: center;
+    margin: -10vw 0 0;
+    font-size: 28vw;
+  }
+
+  .releases,
+  p.about {
+    width: 100%;
+  }
+
+  .releases {
+    max-width: 900px;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
