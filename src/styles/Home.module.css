@@ -51,7 +51,7 @@ h1.animated-text {
   background-size: 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient 10s ease infinite;
+  animation: gradient 5s ease infinite;
 }
 
 .screen {

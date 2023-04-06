@@ -23,7 +23,7 @@ export default function Album() {
     <main className={styles.main}>
       <div className={styles.screen}>
         <nav className={styles.header}>
-          <Link href='/' dangerouslySetInnerHTML={{ __html: "&lt; miop" }} />
+          <Link href='/' dangerouslySetInnerHTML={{ __html: "&lt; mi☮p" }} />
         </nav>
 
         <section className={styles.album}>
