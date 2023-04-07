@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: "/out",
   images: {
-    optimizeImages: false
+    unoptimized: true
   }
 }
 
