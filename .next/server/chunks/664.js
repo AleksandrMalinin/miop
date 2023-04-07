@@ -442,7 +442,15 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname , query , hash  } = (0, _parsePath).parsePath(path);
-    if (false) {}
+    if (true) {
+        if (/\.[^/]+\/?$/.test(pathname)) {
+            return `${(0, _removeTrailingSlash).removeTrailingSlash(pathname)}${query}${hash}`;
+        } else if (pathname.endsWith("/")) {
+            return `${pathname}${query}${hash}`;
+        } else {
+            return `${pathname}/${query}${hash}`;
+        }
+    }
     return `${(0, _removeTrailingSlash).removeTrailingSlash(pathname)}${query}${hash}`;
 };
 exports.normalizePathTrailingSlash = normalizePathTrailingSlash;
