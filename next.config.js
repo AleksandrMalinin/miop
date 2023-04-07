@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: "",
-  assetPrefix: "",
+  assetPrefix: "https://www.miop-sound.com/",
   images: {
     unoptimized: true
   }
