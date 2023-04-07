@@ -1,3 +1,4 @@
+import { GetStaticProps, GetStaticPaths } from "next"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import Image from "next/image"
@@ -5,10 +6,24 @@ import styles from "@/styles/Album.module.css"
 import Link from "next/link"
 import albums from "../../public/albums.json"
 
-export default function Album() {
+interface Album {
+  title: string
+  duration: string
+  year: string
+  description: string
+  credits: {
+    designer: string
+    mastering: string
+  }
+}
+
+interface Props {
+  album: Album
+}
+
+export default function Album({ album }: Props) {
   const router = useRouter()
   const { slug } = router.query
-  const album = albums[slug as keyof typeof albums]
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
@@ -102,4 +117,26 @@ export default function Album() {
       </div>
     </main>
   )
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params as { slug: string }
+  const album = albums[slug]
+
+  return {
+    props: {
+      album
+    }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = Object.keys(albums).map((slug) => ({
+    params: { slug }
+  }))
+
+  return {
+    paths,
+    fallback: false
+  }
 }
