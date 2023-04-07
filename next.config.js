@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: "/out",
+  basePath: "",
+  assetPrefix: "",
   images: {
     unoptimized: true
   }
