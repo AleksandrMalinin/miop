@@ -1,11 +1,12 @@
 {
   "name": "my-portfolio",
-  "homepage": "https://www.miop-sound.com/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
+    "deploy": "next export && cp -R out/* . && git add . && git commit -m 'deploy' && git push",
+    "clean": "rm -rf .next",
     "start": "next start",
     "lint": "next lint"
   },
