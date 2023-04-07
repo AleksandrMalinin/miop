@@ -121,6 +121,7 @@ export default function Album({ album }: Props) {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string }
+  // @ts-ignore
   const album = albums[slug]
 
   return {
