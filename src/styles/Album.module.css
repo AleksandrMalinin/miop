@@ -93,9 +93,10 @@
 p.album-description {
   padding-left: 40px;
   font-size: 1rem;
-  background: var(--third-glow);
+  background: var(--primary-glow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
 }
 
 .credits p {

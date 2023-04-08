@@ -7,9 +7,19 @@ import albums from "../../public/albums.json"
 
 export default function Home() {
   const [isPressed, setIsPressed] = useState(false)
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | null>(null)
 
-  const handleMouseDown = () => setIsPressed(true)
-  const handleMouseUp = () => setIsPressed(false)
+  const handleMouseDown = () => {
+    if (timerId !== null) {
+      clearTimeout(timerId)
+    }
+    setIsPressed(true)
+  }
+
+  const handleMouseUp = () => {
+    const newTimerId = setTimeout(() => setIsPressed(false), 100)
+    setTimerId(newTimerId)
+  }
 
   return (
     <>
@@ -72,7 +82,7 @@ export default function Home() {
             ambient. often, i&nbsp;do this intuitively, as&nbsp;if swimming
             underwater and occasionally surfacing to&nbsp;feel new waves.
             <br />i allow myself to&nbsp;mimic, mishear, and be&nbsp;mistaken
-            because, in&nbsp;the end, i&rsquo;m searching for something. and
+            because, in&nbsp;the end, i&rsquo;m searching for something. are
             you?
           </p>
 

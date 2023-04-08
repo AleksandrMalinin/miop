@@ -13,8 +13,7 @@
     #16abff33 0deg,
     #0885ff33 55deg,
     #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
+    #0071ff33 160deg
   );
   --secondary-glow: radial-gradient(
     rgba(255, 255, 255, 1),
@@ -24,8 +23,7 @@
       #16abff99 0deg,
       #0885ff99 55deg,
       #54d6ff99 120deg,
-      #0071ff99 160deg,
-      transparent 360deg);
+      #0071ff99 160deg);
 }
 
 @font-face {

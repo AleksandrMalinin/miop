@@ -44,10 +44,11 @@
   background: var(--third-glow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
 }
 
 h1.animated-text {
-  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(45deg, #3f51b5, #5c6bc0, #7986cb, #9fa8da, #b0bec5, #c5cae9, #bbdefb, #90caf9, #64b5f6, #42a5f5);
   background-size: 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -120,6 +121,7 @@ p.about {
   background: var(--primary-glow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
 }
 
 .socials {
