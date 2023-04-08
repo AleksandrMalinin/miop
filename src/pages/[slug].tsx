@@ -26,7 +26,6 @@ interface Props {
 export default function Album({ album }: Props) {
   const router = useRouter()
   const { slug } = router.query
-  const [isHovered, setIsHovered] = useState(false)
   const [showBackCover, setShowBackCover] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -46,11 +45,11 @@ export default function Album({ album }: Props) {
   }
 
   const handleMouseEnter = () => {
-    setIsHovered(true)
+    setShowBackCover(true)
   }
 
   const handleMouseLeave = () => {
-    setIsHovered(false)
+    setShowBackCover(false)
   }
 
   return (
@@ -78,7 +77,7 @@ export default function Album({ album }: Props) {
             {album ? (
               <>
                 <Image
-                  src={`/images/${slug}_2.png`}
+                  src={`/images/${slug}_2.jpg`}
                   alt=''
                   width={1}
                   height={1}
@@ -89,9 +88,9 @@ export default function Album({ album }: Props) {
 
                 <Image
                   src={
-                    isHovered
-                      ? `/images/${slug}_2.png`
-                      : `/images/${slug}_1.png`
+                    showBackCover
+                      ? `/images/${slug}_2.jpg`
+                      : `/images/${slug}_1.jpg`
                   }
                   alt={`${album.title} cover`}
                   width={400}
