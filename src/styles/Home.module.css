@@ -20,6 +20,7 @@
 .title {
   display: flex;
   justify-content: center;
+  align-items: center;
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
